@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>
+	Map
+  </title>
+  <script src="http://maps.google.com/maps/api/js?sensor=false" 
+          type="text/javascript"></script>
+	</head> 
+<body>
+	<h1>
+		Clothes Drive Locations 
+	</h1>
+  <div id="map" style="width: 800px; height: 300px;"></div>
+
+  <script type="text/javascript">
+    var locations = [
+      ['One Warm Coat', 37.339917, -121.913255],
+      ['City Team', 37.383396, -121.918929],
+      ['Sacred Heart', 37.316638, -121.874594],
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 5,
+      center: new google.maps.LatLng(36.7783, -119.4179),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJoPcYxoD1TRYcxJtcbjCTXfP8mOx-BN8&callback=initMap">
+    </script>
+  </body>
+</html>
