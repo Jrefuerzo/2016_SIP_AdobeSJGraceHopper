@@ -61,51 +61,52 @@
                 </h1>
 
                 <!-- First Blog Post -->
-				
-				<p id="nameHolder"></p>
-               
-
+				<h2> 
+				<a><p id="nameHolder"></p>
+               </a>
+				</h2>
 			   <p class="lead">
-                    Organization:<a href="index.php">Organization Name</a>
+					<a> <p id="organizationname"> </a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on Month Day, Year at Time PM</p>
+                <p> <p id="day" ></p>
                 <hr>
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <img class="img-responsive" src="http://www.genexconcerts.com/wp-content/uploads/2015/09/people-helping.jpg" alt="">
                 <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
+                <p id="describe"></p>
                 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>
 
                 <!-- Second Blog Post -->
                 <h2>
-                    <a href="#">Blog Post Title</a>
+                    <a>Serve Hot Meals</a>
                 </h2>
-                <p class="lead">
-                    by <a href="index.php">Start Bootstrap</a>
+                
+				<p class="lead">
+                     <a>Loaves and Fishes</a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:45 PM</p>
+                <p><span class="glyphicon glyphicon-time"></span> Monday through Friday from 9AM-4PM</p>
                 <hr>
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <img class="img-responsive" src="http://files.ctctcdn.com/8a00e212101/6cec2a75-9a84-4362-b2a3-ea979940ad2b.jpg" alt="">
                 <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quasi, fugiat, asperiores harum voluptatum tenetur a possimus nesciunt quod accusamus saepe tempora ipsam distinctio minima dolorum perferendis labore impedit voluptates!</p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <p>Our volunteer opportunities are open every Monday - Friday. As a volunteer, you will be asked to prep fruits and vegetables, serve hot meals, pour beverages, wash dishes, and tidy-up the site facility. Please be 14 years of age, or over (unless accompanied by a parent or guardian). Happy volunteering!</p>
+                <a class="btn btn-primary" href="http://www.loavesfishes.org/">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>
 
                 <!-- Third Blog Post -->
                 <h2>
-                    <a href="#">Blog Post Title</a>
+                    <a href="#">Distribute Food in the Community</a>
                 </h2>
                 <p class="lead">
-                    by <a href="index.php">Start Bootstrap</a>
+                   <a>Second Harvest Food Bank</a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:45 PM</p>
+                <p><span class="glyphicon glyphicon-time"></span> Every third Saturday from 9AM- 12PM </p>
                 <hr>
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <img class="img-responsive" src="https://www.shfb.org/docs/aboutus/annualreport/p12_gilroy.jpg" alt="">
                 <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptates, voluptas dolore ipsam cumque quam veniam accusantium laudantium adipisci architecto itaque dicta aperiam maiores provident id incidunt autem. Magni, ratione.</p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <p>Volunteers are needed to assist with the Food Bank's direct service food distribution sites throughout Santa Clara and San Mateo Counties assisting with food distribution, membership renewals, clerical and more. These positions are for volunteers who are able to commit to helping every week at our Brown Bag sites or once a month at our Family Harvest sites.</p>
+                <a class="btn btn-primary" href="http://www.shfb.org/volunteer">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>
 
@@ -195,16 +196,30 @@ E-mail: <input type="text" name="email"><br>
 --> 
 
 
-<input type="text" id= "myHeader">
-
+<b> Post a Volunteer Opportunity: </b>
+<br>
+Volunteer Title: <input type="text" id= "myTitle">
+<br>
+Organization: <input type="text" id="myOrgan">
+<br>
+Date & Time: <input type="text" id="myDate">
+<br>
+Description: <input type="text" id= "myDescription"
+<br>
 
 
 <script> function myFunction() {
-    var nameText = document.getElementById("myHeader").value;
+    var nameText = document.getElementById("myTitle").value;
 	document.getElementById("nameHolder").innerHTML = nameText;
+	var nameText2 = document.getElementById("myOrgan").value
+	document.getElementById("organizationname").innerHTML=nameText2;
+	var nameText3 = document.getElementById("myDate").value
+	document.getElementById("day").innerHTML=nameText3;
+	var nameText4 = document.getElementById("myDescription").value
+	document.getElementById("describe").innerHTML=nameText4;
 }
-</script>
 
+ </script>
 <button onclick="myFunction()">Submit</button>
 
 

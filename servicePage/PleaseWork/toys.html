@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>Toy Drives</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,8 +28,7 @@
     <![endif]-->
 
 </head>
-
-<script src="http://maps.google.com/maps/api/js?sensor=false" 
+ <script src="http://maps.google.com/maps/api/js?sensor=false" 
           type="text/javascript"></script>
 <body>
 
@@ -54,40 +53,40 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Clothes Drives in the Area 
+                    Toy Drives in the Area 
                 </h1>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="	fa fa-tag"></i> One Warm Coat </h4>
+                        <h4><i class="fa fa-gamepad"></i> Savers </h4>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="http://www.onewarmcoat.org/registercommunity/" class="btn btn-default">Host a Drive!</a>
+                        <p>The goods collected are sold to our stores. So essentially, you’re doing a lot of good by raising revenue for your organization while helping to recycle unwanted merchandise and keeping them out of landfills.</p>
+                        <a href="https://www.savers.com/donate/start-a-donation-drive" class="btn btn-default">Host a Drive!</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="	fa fa-tag"></i> City Team</h4>
+                        <h4><i class="fa fa-gamepad"></i> City Team</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="https://www.cityteam.org/donate/project-give/coat-drive/index.php" class="btn btn-default">Host a Drive!</a>
+                        <p>City team is a Christian nonprofit organization dedicated to transforming the lives of individuals, families and communities with physical and spiritual needs. You can help meet basic needs and brighten the holidays for low-income children in your area by organizing a toy drive. The simple gift of a toy will bring hope to children who have been living in poverty.</p>
+                        <a href="https://www.cityteam.org/toydrive/" class="btn btn-default">Host a Drive!</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="	fa fa-tag"></i> Sacred Heart</h4>
+                        <h4><i class="fa fa-gamepad"></i> Sacred Heart</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="
-http://publicaccess.shcs.netqnet.com/SHCSDrives.aspx" class="btn btn-default">Host a Drive!</a>
+                        <p>Sacred Heart Community Service is dedicated to bringing the community together to address poverty in Silicon Valley. Through a comprehensive array of resources, services, and community involvement initiatives, SHCS is making a real impact in the lives of working poor families. You can help change a family’s future by organizing a drive to collect hygiene items, including tooth brushes, deodorant, and shampoo.
+</p>
+                        <a href="http://publicaccess.shcs.netqnet.com/SHCSDrives.aspx" class="btn btn-default">Host a Drive!</a>
                     </div>
                 </div>
             </div>
@@ -98,23 +97,26 @@ http://publicaccess.shcs.netqnet.com/SHCSDrives.aspx" class="btn btn-default">Ho
 
     </div>
     <!-- /.container -->
-</h1>
-  <div id="map" style="width: 800px; height: 300px;"></div>
+	 <div id="map" style="width: 800px; height: 300px;"></div>
 
   <script type="text/javascript">
     var locations = [
-      ['One Warm Coat', 37.339917, -121.913255],
       ['City Team', 37.383396, -121.918929],
+      ['Savers', 37.317675, -121.916855],
       ['Sacred Heart', 37.316638, -121.874594],
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 5,
-      center: new google.maps.LatLng(36.7783, -119.4179),
+      zoom: 10,
+      center: new google.maps.LatLng(37.3382, -121.8863),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
-    var infowindow = new google.maps.InfoWindow();
+    var infowindow = new google.maps.InfoWindow({
+		content: "City Team"
+	});
+	
+	infowindow.open(map,marker);
 
     var marker, i;
 
@@ -135,6 +137,7 @@ http://publicaccess.shcs.netqnet.com/SHCSDrives.aspx" class="btn btn-default">Ho
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJoPcYxoD1TRYcxJtcbjCTXfP8mOx-BN8&callback=initMap">
     </script>
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
