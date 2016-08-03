@@ -112,14 +112,16 @@ Thanks to our thousands of donors and volunteers, 47 million pounds of food have
       ['SF-Marin Food Bank & Funds', 38.071948, -122.530538],
     ];
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 8,
-      center: new google.maps.LatLng(37.6879, -122.4702),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat:37.6879, lng:-122.4702},
+          zoom: 6
+        });
 
-    var infowindow = new google.maps.InfoWindow();
-
+    var infowindow = new google.maps.InfoWindow({
+		content: "Second Harvest Food Bank"
+	});
+ 
     var marker, i;
 
     for (i = 0; i < locations.length; i++) {  
@@ -135,6 +137,32 @@ Thanks to our thousands of donors and volunteers, 47 million pounds of food have
         }
       })(marker, i));
     }
+	
+			        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
     </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJoPcYxoD1TRYcxJtcbjCTXfP8mOx-BN8&callback=initMap">
