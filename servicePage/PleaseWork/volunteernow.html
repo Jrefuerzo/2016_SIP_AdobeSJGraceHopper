@@ -88,7 +88,8 @@ return t;
                 </p>
                 <p> <p id="day" ></p>
                 <hr>
-                <img class="img-responsive" src="http://www.genexconcerts.com/wp-content/uploads/2015/09/people-helping.jpg" alt="">
+               <img id="picture">
+ 
                 <hr>
                 <p id="describe"></p>
                 
@@ -144,18 +145,19 @@ return t;
             <div class="col-md-4">
 
                 <!-- Blog Search Well -->
-                <div class="well">
+             
+				
+                 
+                <div class="input-group">
                     
-                    <div class="input-group">
-                     
-                      
+                    
                            
                                 
                         
                      
                     </div>
                     <!-- /.input-group -->
-                </div>
+                
 
                 <!-- Blog Categories Well -->
                 <div class="well">
@@ -224,9 +226,10 @@ Organization: <input type="text" id="myOrgan">
 <br>
 Date & Time: <input type="text" id="myDate">
 <br>
-Description: <input type="text" id= "myDescription"
+Description: <input type="text" id= "myDescription">
 <br>
-
+Picture: <input type= "file" id="myPic">
+<br>
 
 <script> function myFunction() {
     var nameText = document.getElementById("myTitle").value;
@@ -237,9 +240,13 @@ Description: <input type="text" id= "myDescription"
 	document.getElementById("day").innerHTML=nameText3;
 	var nameText4 = document.getElementById("myDescription").value
 	document.getElementById("describe").innerHTML=nameText4;
+	var nameText5 = document.getElementById("myPic").value
+	document.getElementById("picture").innerHTML=nameText5;
 }
 
  </script>
+
+
 <button onclick="myFunction()">Submit</button>
 
 <br>

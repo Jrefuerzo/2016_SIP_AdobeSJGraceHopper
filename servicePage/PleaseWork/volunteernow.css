@@ -6,3 +6,6 @@
 #comments li {
     list-style: none;
 }                
+h6 {
+    visibility: hidden;
+}
